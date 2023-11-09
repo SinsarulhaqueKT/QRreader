@@ -5,19 +5,27 @@ import cors from 'cors';
 const app = express();
 const port = 1000;
 
+// const db = mysql.createConnection({
+//     host: "sql300.infinityfree.com",
+//     user: "if0_35392251",
+//     database: "if0_35392251_qrscanner",
+//     password: "Sinsar@123",
+// });
 const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     database: "qrscanner",
-    password: "password"
+    password: "password",
 });
 
-const corsOptions = {
-    origin: 'http://192.168.1.106:1000', // Change this to the correct frontend URL
-    optionsSuccessStatus: 200,
-};
 
-app.use(cors(corsOptions));
+
+// const corsOptions = {
+//     origin: 'http://sql12.freesqldatabase.com', // Change this to the correct frontend URL
+//     optionsSuccessStatus: 200,
+// };
+
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
